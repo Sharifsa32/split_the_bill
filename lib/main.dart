@@ -32,7 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   double result = 0;
   double remaining = 0;
-  int divider = 3;
+  int divider = 1;
   int dividerMinus1 = 1;
   double cost = 10;
   String resultText = "-";
@@ -121,11 +121,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.check),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
@@ -133,12 +128,14 @@ class _MyHomePageState extends State<MyHomePage> {
   void onPressedSub() {
     setState(() {
       divider -= 1;
+      _incrementCounter();
     });
   }
 
   onPressedAdd() {
     setState(() {
       divider += 1;
+      _incrementCounter();
     });
   }
 }
